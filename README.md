@@ -19,7 +19,23 @@ Useful CLI flags:
 - `--wallet-root <path>` – change the root wallet directory.
 - `--api-base <url>` – override API host (defaults to `https://mine.defensio.io/api`).
 
+-
+### Ubuntu 24.04 Quick Install Script
+
+On Ubuntu 24.04 LTS environments where `sudo` is unavailable (such as many cloud-hosted sandboxes), you can install and start **DefensioMiner** using a single script. The script updates the system, installs Node 20 and the Rust toolchain, clones this repository, builds the solver, generates and registers wallets (IDs 1–100), optionally sets up a small donation range (wallets 10‑20 donate to wallet 10) and finally starts the miner using all available CPU cores.
+
+1. Download or copy `scripts/install-ubuntu24.sh` to your server.
+2. Make it executable and run it:
+
+```bash
+chmod +x scripts/install-ubuntu24.sh
+./scripts/install-ubuntu24.sh
+```
+
+You can customise the wallet ranges and donation logic by editing the script. See the comments in `install-ubuntu24.sh` for details. The script is intended for first‑time setup; on subsequent runs it will reuse existing wallets and skip regeneration/registration.
+
 ---
+
 
 ## Detailed Guide
 
